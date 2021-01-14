@@ -1,0 +1,36 @@
+{% block form %}
+<form method="POST" action="/">
+  {{ form.csrf_token }}
+  {% for cat, mes in get_flashed_messages(True) %}
+    <div class="flash {{ cat }}">{{ mes }}</div>
+  {% endfor %}
+  <div class="field">
+    <label class="label">ФИО</label>
+    <div class="control">
+      <input class="input" name="name" type="text" placeholder="e.g Иван Иванов">
+    </div>
+  </div>
+  
+  <div class="field">
+    <label class="label">Почта</label>
+    <div class="control">
+      <input class="input" name="email" type="email" placeholder="e.g. ivan-ivanov@gmail.com">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Отзыв</label>
+    <div class="control">
+      <textarea class="input" name="review" type="text" placeholder="e.g Прекрасная кафедра"></textarea>
+    </div>
+  </div>
+
+  <div class="field">
+    <p class="control">
+      <button class="button is-success">
+        Оставить отзыв
+      </button>
+    </p>
+  </div>
+</form>
+{% endblock %}

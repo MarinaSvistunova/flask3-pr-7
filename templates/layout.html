@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<div>
+  <div class="columns is-multiline">
+    <div class="column is-three-quarters m-5">
+      <div class="columns is-multiline">
+        <div class="column is-full">{% include 'specialities.html' %} {% block specialities %}{% endblock %}</div>
+        <div class="column is-full">{% include 'tutors.html' %} {% block tutors %}{% endblock %}</div>
+        <div class="column is-full">{% include 'reviews.html' %} {% block reviews %}{% endblock %}</div>
+        <div class="column is-full">{% include 'form.html' %} {% block form %}{% endblock %}</div>
+        <div class="column is-full">{% include 'contacts.html' %} {% block contacts %}{% endblock %}</div>
+      </div>
+    </div>
+    <div class="column is-one-quarter m-5">
+      <div>{% include 'side_block_send.html' %} {% block side_block_send %}{% endblock %}</div>
+      <div>{% include 'side_block_tw.html' %} {% block side_block_tw %}{% endblock %}</div>
+    </div>
+  </div>
+</div>
+{% endblock %}

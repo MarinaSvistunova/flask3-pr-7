@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="column is-multiline">
+    <div class="column is-one-quarter">
+        <form method="POST" action="/register" class="p-4">
+            {{ form.csrf_token }}
+            {% for cat, mes in get_flashed_messages(True) %}
+              <div class="flash {{ cat }}">{{ mes }}</div>
+            {% endfor %}
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" name="name" type="text" placeholder="e.g. ivan-ivanov@gmail.com" required />
+                </div>
+              </div>
+            <div class="field">
+              <label class="label">Email</label>
+              <div class="control">
+                <input class="input" name="email" type="email" placeholder="e.g. ivan-ivanov@gmail.com" required />
+              </div>
+            </div>
+            <div class="field">
+              <label class="label">Password</label>
+              <div class="control">
+                <input class="input" name="psw" type="password" required />
+              </div>
+            </div>
+            <div class="field">
+                <label class="label">Repeat password</label>
+                <div class="control">
+                  <input class="input" name="psw2" type="password" required />
+                </div>
+              </div>
+            <div class="field columns is-multiline">
+                <div class="column">
+                    <p class="control">
+                        <button class="button is-danger">Регистрация</button>
+                      </p>
+                </div>
+            </div>
+          </form>
+    </div>
+    <div class="column"></div>
+</div>
+{% endblock %}
